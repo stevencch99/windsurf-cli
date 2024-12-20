@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Check if a path argument is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: windsurf <path>"
+    echo "Opens the specified path in Windsurf editor"
+    exit 1
+fi
+
+# Get the absolute path of the argument
+path=$(cd "$(dirname "$1")" 2>/dev/null && pwd -P)/$(basename "$1")
+
+# Check if the path exists
+if [ ! -e "$path" ]; then
+    echo "Error: Path does not exist: $1"
+    exit 1
+fi
+
+# Open Windsurf with the specified path
+open -a Windsurf "$path"
