@@ -4,6 +4,20 @@ A command-line interface for opening files and directories in the Windsurf edito
 
 ## Installation
 
+You can install Windsurf CLI in two ways:
+
+### Option 1: Automatic Installation
+
+1. Clone this repository
+2. Run the install script:
+   ```bash
+   ./install.sh
+   ```
+   This will install the `windsurf` command to `/usr/local/bin`. You can specify a different installation directory:
+   ```bash
+   ./install.sh /custom/bin/path
+   ```
+
 1. Clone this repository
 2. Copy the `windsurf` script to your local bin directory or add it to your PATH
 3. Make the script executable: `chmod +x windsurf`
@@ -28,7 +42,7 @@ windsurf /path/to/project
 
 ## Requirements
 
-- macOS
+- Unix-like operating system (Linux, macOS, etc.)
 - Windsurf editor installed
 
 ## License
