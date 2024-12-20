@@ -18,6 +18,8 @@ You can install Windsurf CLI in two ways:
    ./install.sh /custom/bin/path
    ```
 
+### Option 2: Manual Installation
+
 1. Clone this repository
 2. Copy the `windsurf` script to your local bin directory or add it to your PATH
 3. Make the script executable: `chmod +x windsurf`
@@ -39,6 +41,20 @@ windsurf myfile.txt
 # Open a directory
 windsurf /path/to/project
 ```
+
+## Testing
+
+To run the test suite:
+
+```bash
+./test.sh
+```
+
+The tests verify:
+- Basic command functionality
+- Error handling
+- Path resolution
+- Installation script integrity
 
 ## Requirements
 
