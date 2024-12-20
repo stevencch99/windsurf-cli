@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run shellcheck
+      uses: ludeeus/action-shellcheck@master
+      with:
+        scandir: '.'
+
+    - name: Run tests
+      run: |
+        chmod +x ./test.sh
+        ./test.sh
+
+    - name: Test installation script
+      run: |
+        chmod +x ./install.sh
+        ./install.sh ~/local/bin
